@@ -76,6 +76,29 @@ Visible partitions are not necessarily authorized for the current account.
 Read [references/slurm-resources.md](references/slurm-resources.md) before
 making unusual GPU, high-memory, multi-node, or long-duration requests.
 
+## Resource Snapshot
+
+Live Slurm data on 2026-07-15 showed these resources in the generally visible
+public partitions:
+
+- `main`: 61 heterogeneous CPU nodes, from 16 to 192 logical CPUs per node and
+  roughly 91 GiB to 2.0 TiB of Slurm-reported memory.
+- `long`: eight 24-CPU nodes with roughly 91 GiB each.
+- `threaded`: four 40-CPU nodes with roughly 1.97 TiB each.
+- `gpu`: nine NVIDIA GPU nodes containing **20 GPUs total**: eight H100 80 GB,
+  seven A100 80 GB, two L4, one T4, and two V100 GPUs.
+- Several CPU nodes in `main` also overlap named high-memory, ultrahigh-memory,
+  or owner partitions. Requesting sufficient memory through an authorized
+  public partition can sometimes reach them without private QOS access.
+- Two AMD MI210 GPUs were visible only through a private partition in this
+  snapshot; do not assume access or CUDA compatibility.
+
+Availability and node state are volatile. At the snapshot time, one H100 node
+was drained and the L4 node was down even though both remained configured.
+Read [references/hardware-resources.md](references/hardware-resources.md) for
+the node-level GPU table, CPU tiers, memory units, and request examples. Always
+refresh with `scripts/inventory_uahpc.sh` before capacity planning.
+
 ## Storage
 
 Use the paths belonging to the remote account:

@@ -18,7 +18,9 @@ Many owner/project partitions are also visible. Visibility does not establish
 permission: usable QOS values are determined by the user's association.
 
 The observed GPU partition included NVIDIA V100, T4, L4, A100 80 GB, and H100
-80 GB nodes. An AMD MI210 node appeared under a private partition and requires a
+80 GB nodes: 20 configured NVIDIA GPUs across nine nodes in the 2026-07-15
+snapshot. See [hardware-resources.md](hardware-resources.md) for exact node and
+GPU counts. An AMD MI210 node appeared under a private partition and requires a
 ROCm-compatible stack. Node state and ownership can change without notice.
 
 ## Partition And QOS Selection
