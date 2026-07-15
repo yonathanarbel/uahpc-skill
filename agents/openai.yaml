@@ -1,0 +1,4 @@
+interface:
+  display_name: "UAHPC"
+  short_description: "Connect, discover resources, and run Slurm jobs"
+  default_prompt: "Use $uahpc to inspect available resources and run this workload safely on UAHPC."
